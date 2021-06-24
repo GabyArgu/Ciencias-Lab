@@ -1,0 +1,85 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="icon" type="icon/png" href="resources/icono.png">
+
+    <title>Validala®</title>
+  </head>
+  <body >
+    <section class="container-fluid contenedorP" id="contenedorP" align="center">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-5 col-md-8 col-sm-10">
+                <div class="jumbotron text-white text-justify todo" id="todo">
+                    <img src="resources/logo.png" alt="logo" width="450" height="150" style="margin-bottom: 30px;">
+                    <h1 class="h1class">¡Bienvenid@!</h1>
+                    <p class="lead">Este es un software simple de código abierto desarrollado para verificar la validación
+                      de números de tarjetas de crédito, en Validala® estamos comprometidos con su seguridad y privacidad
+                      por lo que nunca compartiremos la información que ingreses. Esperamos que te sea util.</p>
+                    <hr class="my-2">
+                    <form>
+                      <div class="form-group">
+                        <label for="cardinput">Número de tarjeta</label>
+                        <input type="text" class="form-control" id="cardinput" onkeypress="if (isNaN( String.fromCharCode(event.keyCode) )) return false;"
+                        pattern="[0-9, ]{15,}" required min="999999999999999" max="9999999999999999999" placeholder="1234 5678 9123 4567">
+                        <small class="form-text text-muted">Nunca compartiremos sus datos con nadie más.</small>
+                      </div>
+                      <button type="submit" class="btn btn-outline-light btn-lg" href="#" role="button" onclick="validar()">Validala</button>
+                    </form>
+                  </div>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid" id="contenedor0" style="color: white;">
+      <div class="row">
+        <div class="col-12">
+          <div class="card card1" align="center">
+            <img src="resources/equis.png" class="card-img-top" alt="x" style="width: 300px;" height="300px">
+            <div class="card-body cardbody">
+              <h2 class="card-title titulo">¡Lo siento! Tu tarjeta no es válida.</h2>
+              <div class="textt1">
+                <div class="textt">
+                  <p class="card-text">El número de tarjeta #</p>
+                  <p class="card-text" id="mensaje0"></p>
+                </div>
+                <p class="card-text">No es válido. Vuelva a intentarlo con otro número de tarjeta o verifique que lo ingresó correctamente</p>
+              </div>
+              <a href="#" class="btn btntryagain" id="btnagain" onclick="again()">Inténtalo de nuevo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <section class="container-fluid" id="contenedor1" style="color: white;">
+      <div class="row">
+        <div class="col-12">
+          <div class="card card1" >
+            <img src="resources/correcto.png" class="card-img-top" alt="x" style="width: 260px; margin-top: 20px;" height="240px">
+            <div class="card-body cardbody">
+              <h2 class="card-title titulo">¡Tu tarjeta es válida!</h2>
+              <div class="textt1">
+                <div class="textt">
+                  <p class="card-text">¡Felicidades! Tu tarjeta #</p>
+                  <p class="card-text" id="mensaje1"></p>
+                </div>
+                <p class="card-text">Es válida. ¿Quieres intentarlo de nuevo?</p>
+              </div>
+              <a href="#" class="btn btntryagain" onclick="again()">Inténtalo de nuevo</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section> 
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
